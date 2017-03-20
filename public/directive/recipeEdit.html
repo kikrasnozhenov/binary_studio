@@ -1,0 +1,11 @@
+<div class="content center" ng-controller="myCtrl as vm">
+  <div class="form-group">
+    <label for="title">Name:</label>
+    <input ng-model="vm.recipeName" type="text" class="form-control" id="title" />
+  </div>
+  <div class="form-group">
+    <label for="recipe">Recipe:</label>
+    <textarea ng-model="vm.recipeInfo" class="form-control" rows="5" id="recipe"></textarea>
+  </div>
+  <a class="name-recipe" href="/#/" ng-click="vm.add()">Add</a>
+</div>

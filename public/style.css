@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  bottom: 0;
+  background: url(images/bcgnd.jpg) fixed;
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.header-container {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 10px;
+  border: 2px solid #c63731;
+}
+.logo-icon {
+  width: 40px;
+  vertical-align: middle;
+}
+.logo-title {
+  padding: 10px 15px;
+  color: #756b6b;
+  font-size: 25px;
+  line-height: 5px;
+  vertical-align: middle;
+  font-family: 'Architects Daughter', cursive;
+  text-shadow: 1px 1px #9E9E9E;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.logo-title:hover {
+  color: #525252;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.recipeEdit {
+  display: block;
+  padding-top: 20px;
+  line-height: 0px;
+  color: #2196F3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.menu-button {
+  padding: 15px;
+  float: right;
+  font-size: 20px;
+  color: #c63731;
+  transition: 0.5s;
+}
+.menu-button:hover {
+  color: #525252;
+  transition: 0.5s;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 10px;
+  border: 2px solid #c63731;
+}
+.name-recipe {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  color: #c63731;
+  transition: 0.3s;
+  padding: 15px 30px;
+}
+.name-recipe:hover {
+  background-color: #c63731;
+  transition: 0.3s;
+  color: #ffffff;
+}
+
+.footer-content {
+  background-color: #fff;
+  padding: 10px;
+}
+.footer-title {
+  color: #756b6b;
+  text-shadow: 1px 1px #9E9E9E;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.recipe-info {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2196f3;
+}
