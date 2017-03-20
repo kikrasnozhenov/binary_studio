@@ -1,4 +1,5 @@
-app.service('Recipes', ['$http', '$rootScope', function($http, $rootScope) {
+angular.module('RecipesApp', ['ngRoute'])
+.service('Recipes', ['$http', '$rootScope', function($http, $rootScope) {
 
   var recipes = [];
   function getRecipes() {
@@ -30,12 +31,6 @@ getRecipes();
     .success(function(data, status, headers, config) {
         recipes.push(data);
         $rootScope.$broadcast('recipe:added', data);
-        });
-  }
-  service.update = function(recipe) {
-    $http({method: 'PUT', url: '/' + recipe.id, data: recipe})
-        .success(function(data, status, headers, config) {
-            $rootScope.$broadcast('recipe:updated', data);
         });
   }
 }]);
