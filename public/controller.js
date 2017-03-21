@@ -5,7 +5,9 @@ addrecipeCtrl.$inject = ['Recipes'];
 function addrecipeCtrl(Recipes) {
   var vm = this;
   this.addRecipe = function() {
+  console.log('addRecipe');
   };
+
   vm.recipeName = "";
   vm.recipeInfo = "";
   vm.add = function() {
@@ -15,7 +17,7 @@ function addrecipeCtrl(Recipes) {
     };
   };
   // Call the async method and then do stuff with what is returned inside our own then function
-  // Recipes.async().then(function(d) {
-  //   vm.data = d;
-  // });
+  Recipes.async().then(function(d) {
+    vm.data = d;
+  });
 };

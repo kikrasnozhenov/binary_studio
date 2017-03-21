@@ -1,5 +1,4 @@
 var app = angular.module('app', ['ngRoute']);
-
 app.controller('recipesCtrl', recipesCtrl);
 
 recipesCtrl.$inject = ['Recipes'];
