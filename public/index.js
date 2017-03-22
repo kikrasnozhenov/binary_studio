@@ -4,14 +4,16 @@ angular.module('RecipesApp', ['ngRoute'])
     $routeProvider
     .when("/", {
       templateUrl : "recipes.html",
-      controller : "recipesCtrl"
+      controller : "recipesCtrl",
+      controllerAs : "recipeNew"
     })
     .when("/recipeInfo", {
       templateUrl : "recipeInfo.html"
     })
     .when("/recipeEdit", {
       templateUrl : "recipeEdit.html",
-      controller : "addrecipeCtrl"
+      controller : "addrecipeCtrl",
+      controllerAs : "addRecipe"
     })
     .when("/history", {
       templateUrl : "history.html"

@@ -7,6 +7,7 @@ function addrecipeCtrl(Recipes) {
   this.addRecipe = function() {
   console.log('addRecipe');
   };
+  addRecipe();
 
   vm.recipeName = "";
   vm.recipeInfo = "";
