@@ -1,9 +1,9 @@
-angular.module('RecipesApp', ['ngRoute'])
-.service('Recipes', ['$http', '$rootScope', function($http, $rootScope) {
+var app = angular.module('app');
+app.service('Recipes', ['$http', '$rootScope', function($http, $rootScope) {
 
   var recipes = [];
   function getRecipes() {
-    $http({method: 'GET', url: '/recipes'})
+    $http({method: 'GET', url: '/'})
         .success(function(data, status, headers, config) {
             recipes = data;
             $rootScope.$broadcast('recipes:updated');
@@ -13,10 +13,10 @@ angular.module('RecipesApp', ['ngRoute'])
         });
 }
 getRecipes();
-  service.getAll = function() {
+  recipes.getAll = function() {
   return recipes;
   }
-  service.get = function(id) {
+  recipes.get = function(id) {
     var recipe = null;
     angular.forEach(recipes, function(value) {
         if (parseInt(value.id) === parseInt(id)) {
@@ -26,7 +26,7 @@ getRecipes();
     });
     return recipe;
   }
-  service.add = function(recipe) {
+  recipes.add = function(recipe) {
   $http({method: 'POST', url: '/', data: recipe})
     .success(function(data, status, headers, config) {
         recipes.push(data);

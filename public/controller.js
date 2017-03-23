@@ -1,11 +1,12 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app');
 app.controller('addrecipeCtrl', addrecipeCtrl);
 
 addrecipeCtrl.$inject = ['Recipes'];
 function addrecipeCtrl(Recipes) {
   var vm = this;
-  this.addRecipe = function() {
-  console.log('addRecipe');
+  var addRecipe = this;
+  addRecipe = function() {
+      console.log('addRecipe')
   };
   addRecipe();
 
@@ -17,8 +18,5 @@ function addrecipeCtrl(Recipes) {
         recipe: vm.recipeInfo
     };
   };
-  // Call the async method and then do stuff with what is returned inside our own then function
-  Recipes.async().then(function(d) {
-    vm.data = d;
-  });
 };
+  // Call the async method and then do stuff with what is returned inside our own then function

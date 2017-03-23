@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app');
 app.controller('recipesCtrl', recipesCtrl);
 
 recipesCtrl.$inject = ['Recipes'];
@@ -11,4 +11,4 @@ function recipesCtrl(Recipes) {
   Recipes.async().then(function(d) {
     vm.data = d;
   });
-};
+}
