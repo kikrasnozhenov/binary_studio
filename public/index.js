@@ -4,7 +4,7 @@ angular.module('app', ['ngRoute'])
     $routeProvider
     .when("/", {
       templateUrl : "recipes.html",
-      controller : "recipesCtrl",
+      controller : "newRecipeCtrl",
       controllerAs : "recipeNew"
     })
     .when("/recipeInfo", {

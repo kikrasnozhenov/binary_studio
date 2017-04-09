@@ -1,17 +1,13 @@
 var app = angular.module('app');
-app.controller('recipesCtrl', recipesCtrl);
+app.controller('newRecipeCtrl', newRecipeCtrl);
 
-recipesCtrl.$inject = ['recipesService'];
-function recipesCtrl(recipesService) {
-  this.addRecipe = [
-    {
-      recipeName: 'recipeName'
-    }
-  ];
-  vm.add = function() {
-    var recipe = {
-        name: vm.recipeName,
-        info: vm.recipeInfo
-    };
-  };
-}
+newRecipeCtrl.$inject = ['recipesService'];
+function newRecipeCtrl(recipesService) {
+  var vm = this;
+  vm.recipes = recipesService.getRecipes();
+  // vm.newRecipe = [
+  //   {
+  //     recipes: 'recipeName'
+  //   }
+  // ]
+};
