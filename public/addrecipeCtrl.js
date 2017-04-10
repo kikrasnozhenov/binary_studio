@@ -9,7 +9,6 @@ function addrecipeCtrl(recipesService) {
   vm.callToAddToRecipesList = function(currObj){
         recipesService.addrecipe(currObj);
     };
-
   // vm.add = function() {
   //   var recipe = {
   //       name: vm.recipeName,

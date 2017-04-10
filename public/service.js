@@ -1,22 +1,26 @@
 var app = angular.module('app');
-app.service('recipesService', ['$http', '$rootScope', function($http, $rootScope) {
+app.service('recipesService', ['$http', '$rootScope', function($http, $rootScope) {  //тут ясен красень печаль:) мои депенденси не используются
 
-var recipesList = [];
+  var recipesList = [];
 
 
-var addrecipe = function(newObj) {
-      productList.push(newObj);
-    };
+  var addrecipe = function(newObj) {
+        productList.push(newObj);
+      };
 
-var getRecipes = function(){
-      return recipesList;
-    };
+  var getRecipes = function(){
+        return recipesList;
+      };
 
-return {
-    addrecipe: addrecipe,
-    getRecipes: getRecipes
+  return {
+      addrecipe: addrecipe,
+      getRecipes: getRecipes
   };
 
+  var service= {};
+  service.getAll = function() {
+    return recipes;
+    }
 }]);
 
 //   function getRecipes() {
