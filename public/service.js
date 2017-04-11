@@ -3,7 +3,6 @@ app.service('recipeService', ['$http', '$rootScope', function($http, $rootScope)
 
   var recipes = [];
   this.saveRecipe = function(recipe){
-      // return a Promise object so that the caller can handle success/failure
       return $http({ method: 'POST', url: '/api/recipe/add', data: recipe});
   }
 
