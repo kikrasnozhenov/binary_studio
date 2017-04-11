@@ -1,14 +1,10 @@
 <div class="content center">
   <div class="form-group">
     <label for="title">Name:</label>
-    <input ng-model="addRecipe.recipe" type="text" class="form-control" id="title" />
+    <input ng-model="saveRecipe.recipe" type="text" class="form-control" id="title" />
   </div>
-  <div class="form-group">
-    <label for="recipe">Recipe:</label>
-    <textarea class="form-control" rows="5" id="recipe"></textarea>
-  </div>
-  <button ng-click="vm.callToAddToRecipesList()" class="">add Recipe</button>
+  <button ng-click="vm.saveRecipe(recipe)" class="">add Recipe</button>
   <div class="name-recipe">
-    {{addRecipe.recipe}}
+    {{saveRecipe.recipe}}
   </div>
 </div>

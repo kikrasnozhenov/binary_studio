@@ -1,10 +1,10 @@
 var app = angular.module('app');
-app.controller('newRecipeCtrl', newRecipeCtrl);
+app.controller('recipesCtrl', recipesCtrl);
 
-newRecipeCtrl.$inject = ['recipesService'];
-function newRecipeCtrl(recipesService) {
+recipesCtrl.$inject = ['recipeService'];
+function recipesCtrl(recipeService) {
   var vm = this;
-  vm.recipes = recipesService.getRecipes();
+  vm.recipes = recipeService.getRecipes();
   // vm.newRecipe = [
   //   {
   //     recipes: 'recipeName'

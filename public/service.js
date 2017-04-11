@@ -1,29 +1,30 @@
 var app = angular.module('app');
-app.service('recipesService', ['$http', '$rootScope', function($http, $rootScope) {  //тут ясен красень печаль:) мои депенденси не используются
+app.service('recipeService', ['$http', '$rootScope', function($http, $rootScope) {
 
-  var recipesList = [];
-
-
-  var addrecipe = function(newObj) {
-        productList.push(newObj);
-      };
-
-  var getRecipes = function(){
-        return recipesList;
-      };
-
-  return {
-      addrecipe: addrecipe,
-      getRecipes: getRecipes
-  };
+  var recipes = [];
+  this.saveRecipe = function(recipe){
+      // return a Promise object so that the caller can handle success/failure
+      return $http({ method: 'POST', url: '/api/recipe/add', data: recipe});
+  }
 
   var service= {};
   service.getAll = function() {
     return recipes;
-    }
+  }
+  service.get = function(id) {
+    var recipe = null;
+    angular.forEach(recipes, function(value) {
+      if (parseInt(value.id) === parseInt(id)) {
+        recipe = value;
+        return false;
+      }
+    });
+    return recipe;
+  }
+  return service;
 }]);
 
-//   function getRecipes() {
+// function getRecipes() {
 //     $http({method: 'GET', url: '/'})
 //     .success(function(data, status, headers, config) {
 //       recipes = data;
@@ -34,20 +35,6 @@ app.service('recipesService', ['$http', '$rootScope', function($http, $rootScope
 //     });
 //   }
 //   getRecipes(); //is for getRecipes fc
-//   var service= {};
-//   service.getAll = function() {
-//     return recipes;
-//   }
-//   service.get = function(id) {
-//     var recipe = null;
-//     angular.forEach(recipes, function(value) {
-//       if (parseInt(value.id) === parseInt(id)) {
-//         recipe = value;
-//         return false;
-//       }
-//     });
-//     return recipe;
-//   }
 //   service.add = function(recipe) {
 //     $http({method: 'POST', url: '/', data: recipe})
 //       .success(function(data, status, headers, config) {
@@ -55,5 +42,3 @@ app.service('recipesService', ['$http', '$rootScope', function($http, $rootScope
 //         $rootScope.$broadcast('recipe:added', data);
 //     });
 //   }
-//   return service;
-// }]);
