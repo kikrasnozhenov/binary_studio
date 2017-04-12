@@ -3,24 +3,24 @@ app.service('recipeService', ['$http', '$rootScope', function($http, $rootScope)
 
   var recipes = [];
   this.saveRecipe = function(recipe){
-      return $http({ method: 'POST', url: '/api/recipe/add', data: recipe});
+    console.log(recipe);
+       return $http({ method: 'POST', url: '/', data: recipe});
   }
-
-  var service= {};
-  service.getAll = function() {
-    return recipes;
-  }
-  service.get = function(id) {
-    var recipe = null;
-    angular.forEach(recipes, function(value) {
-      if (parseInt(value.id) === parseInt(id)) {
-        recipe = value;
-        return false;
-      }
-    });
-    return recipe;
-  }
-  return service;
+  // var service= {};
+  // service.getAll = function() {
+  //   return recipes;
+  // }
+  // service.get = function(id) {
+  //   var recipe = null;
+  //   angular.forEach(recipes, function(value) {
+  //     if (parseInt(value.id) === parseInt(id)) {
+  //       recipe = value;
+  //       return false;
+  //     }
+  //   });
+  //   return recipe;
+  // }
+  // return service;
 }]);
 
 // function getRecipes() {
