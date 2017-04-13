@@ -5,7 +5,7 @@ app.service('recipeService', ['$http', '$rootScope', function($http, $rootScope)
 
   this.saveRecipe = function(recipe){
     console.log(recipe);
-    return $http({ method: 'POST', url: '/', data: recipe});
+    return $http({ method: 'POST', url: 'api/recipe', data: recipe});
   }
   this.getRecipes = function(recipe){
     console.log('recipe');

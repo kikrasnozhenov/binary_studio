@@ -28,6 +28,16 @@ server.route({
     }
 });
 
+server.route({
+    method: 'POST',
+    path: 'api/recipe',
+    handler: function (recuqest, reply) {
+        const recipe = request.params.recipe;
+        reply(recipe);
+    }
+});
+
+
 server.start(function () {
     console.log('Server running at:', server.info.uri);
 });
