@@ -2,10 +2,21 @@ var app = angular.module('app');
 app.service('recipeService', ['$http', '$rootScope', function($http, $rootScope) {
 
   var recipes = [];
+
   this.saveRecipe = function(recipe){
     console.log(recipe);
-       return $http({ method: 'POST', url: '/', data: recipe});
+    return $http({ method: 'POST', url: '/', data: recipe});
   }
+  this.getRecipes = function(recipe){
+    console.log('recipe');
+    return $http({ method: 'GET', url: '/', data: recipe});
+  }
+  this.getAll = function() {
+    console.log('skabla')
+    return recipes;
+  }
+}]);
+
   // var service= {};
   // service.getAll = function() {
   //   return recipes;
@@ -21,7 +32,6 @@ app.service('recipeService', ['$http', '$rootScope', function($http, $rootScope)
   //   return recipe;
   // }
   // return service;
-}]);
 
 // function getRecipes() {
 //     $http({method: 'GET', url: '/'})
