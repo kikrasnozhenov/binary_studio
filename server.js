@@ -5,39 +5,39 @@ server.connection({ port: 3000 });
 var recipes = [];
 
 server.register(require('inert'), function (err) {
-    if (err) {
-        throw err;
-    }
+  if (err) {
+    throw err;
+  }
 
-    server.route({
-        method: 'GET',
-        path: '/',
-        handler: function (request, reply) {
-            reply.file('./public/index.html');
-        }
-    });
-});
-
-server.route({
+  server.route({
     method: 'GET',
-    path: '/{param*}',
-    handler: {
-        directory: {
-            path: './public/'
-        }
+    path: '/',
+    handler: function (request, reply) {
+      reply.file('./public/index.html');
     }
+  });
 });
 
 server.route({
-    method: 'POST',
-    path: 'api/recipe',
-    handler: function (recuqest, reply) {
-        const recipe = request.params.recipe;
-        reply(recipe);
+  method: 'GET',
+  path: '/{param*}',
+  handler: {
+    directory: {
+      path: './public/'
     }
+  }
+});
+
+server.route({
+  method: 'POST',
+  path: '/api/recipe',
+  handler: function (recuqest, reply) {
+    recipes.push(request.params.recipe);
+    reply(recipes);
+  }
 });
 
 
 server.start(function () {
-    console.log('Server running at:', server.info.uri);
+  console.log('Server running at:', server.info.uri);
 });
