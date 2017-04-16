@@ -8,8 +8,8 @@ app.service('recipeService', ['$http', '$rootScope', function($http, $rootScope)
     return $http({ method: 'POST', url: '/api/recipe', data: recipe});
   }
   this.getRecipes = function(recipe){
-    console.log('recipe');
-    return $http({ method: 'GET', url: '/', data: recipe});
+    console.log(recipe);
+    return $http({ method: 'GET', url: '/api/recipe', data: recipe});
   }
   this.getAll = function() {
     console.log('skabla')

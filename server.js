@@ -31,12 +31,21 @@ server.route({
 server.route({
   method: 'POST',
   path: '/api/recipe',
-  handler: function (recuqest, reply) {
-    recipes.push(request.params.recipe);
-    reply(recipes);
+  handler: function (request, reply) {
+    var recipe = request.params.recipe;
+    recipes.push(recipe);
+    reply(recipe);
   }
 });
 
+server.route({
+  method: 'GET',
+  path: '/api/recipe',
+  handler: function (request, reply) {
+    var recipe = request.params.recipe;
+    reply(recipe);
+  }
+});
 
 server.start(function () {
   console.log('Server running at:', server.info.uri);
